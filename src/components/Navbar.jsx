@@ -8,9 +8,9 @@ import { UserContext } from '../context/UserProvider';
 const Navbar = () => {
 
 
-    const {user, setUser} = useContext(UserContext);
+    const {user, signOutUser} = useContext(UserContext);
 
-    const handleClicklogout = async() => {
+    const handleClickLogout = async() => {
         try{
             await signOutUser();
         }catch(error){
@@ -25,7 +25,7 @@ const Navbar = () => {
                 user ?(
                     <>
                 <NavLink to='/'>Inicio | </NavLink>
-                <button onClick={handleClicklogout}>LogOut</button>
+                <button onClick={handleClickLogout}>LogOut</button>
                 </>
                 ):(
                <>
